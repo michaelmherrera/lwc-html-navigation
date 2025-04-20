@@ -2,6 +2,12 @@
   "name": "lwc-html-navigation",
   "displayName": "lwc-html-navigation",
   "description": "Jump to definition and implementation for lwc html templates",
+  "publisher": "michaelmherrera",
+  "icon": "assets/lightning-portal-logo.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/michaelmherrera/lwc-html-navigation.git"
+  },
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.96.0"
