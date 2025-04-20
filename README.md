@@ -1,71 +1,68 @@
-# lwc-html-navigation README
+# lwc-html-navigation 
 
-This is the README for your extension "lwc-html-navigation". After writing up a brief description, we recommend including the following sections.
+This VS Code extension implements 'Go To Definition' for Lightning Web Components (LWC) within HTML templates. With this extension, you can click on a referenced component in your HTML and use the 'Go To Definition' option to navigate directly to the HTML file of the selected component.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- **Navigate to Component Definitions**: Quickly jump to the HTML file of any referenced LWC component in your project.
+- **Error-Free Navigation**: Avoid accidentally navigating to test mocks or similarly named components.
+- **Improved Productivity**: Eliminate the need to manually search for component files by name, saving time and reducing errors.
+- **Modern Coding Experience**: Provides a feature that is standard in modern development environments, now tailored for LWC projects.
 
-For example if there is an image subfolder under your extension project workspace:
+### Example
 
-\!\[feature X\]\(images/feature-x.png\)
+Given the following HTML, you can right-click on `<c-contact-tile>` and select 'Go To Definition' to navigate directly to the `c-contact-tile` component's HTML file.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+
+```html
+<c-contact-tile
+    class="slds-show slds-is-relative"
+    key={contact.Id}
+    contact={contact}
+></c-contact-tile>
+```
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- By default, this extension assumes components are located in `force-app/main/default/lwc`. You can customize this in your workspace settings.
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
 This extension contributes the following settings:
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+- `lwcHtmlNavigation.namespaces`: An array of namespace configurations. Each configuration includes:
+  - `path`: The relative path to the namespace directory (e.g., `force-app/main/default/lwc`).
+  - `namespace`: The namespace prefix used in your components (e.g., `my_app`).
+
+Example configuration:
+
+```json
+{
+  "lwcHtmlNavigation.namespaces": [
+    {
+      "path": "force-app/main/default/lwc",
+      "namespace": "my_app"
+    }
+  ]
+}
+```
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+- Components with non-standard directory structures may not be resolved correctly.
+- Only supports navigation for components referenced in HTML files.
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### 0.0.1
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+- Initial release of `lwc-html-navigation`.
+- Added support for navigating to LWC component definitions.
 
 ---
 
-## Following extension guidelines
+## Following Extension Guidelines
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+This extension follows the [VS Code Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines) to ensure a high-quality user experience.
 
 **Enjoy!**
