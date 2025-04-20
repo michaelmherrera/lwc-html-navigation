@@ -1,4 +1,4 @@
-# lwc-html-navigation 
+# LWC HTML Navigation
 
 This VS Code extension implements 'Go To Definition' for Lightning Web Components (LWC) within HTML templates. With this extension, you can click on a referenced component in your HTML and use the 'Go To Definition' option to navigate directly to the HTML file of the selected component.
 
@@ -54,9 +54,9 @@ Example configuration:
 
 ## Release Notes
 
-### 0.0.1
+### 1.0.3
 
-- Initial release of `lwc-html-navigation`.
+- Initial release
 - Added support for navigating to LWC component definitions.
 
 ---
